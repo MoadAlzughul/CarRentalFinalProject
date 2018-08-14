@@ -23,18 +23,15 @@ public class IndexController {
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String index() {
-//      return "home";
-       return "homemelat";
+       return "home";
     }
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String indexEmpty() {
-//      return "home";
-       return "homemelat";
+       return "home";
     }
 
     @RequestMapping(value = "/about", method = RequestMethod.GET)
     public String about() {
-//      return "home";
         return "rent/aboutUs";
     }
     
