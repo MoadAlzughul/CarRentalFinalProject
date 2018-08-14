@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="home :: head">
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+<nav th:replace="home :: navbar"></nav>
+
+
+<div class="container">
+    <h2>Complete this form</h2>
+    <!--<form action="/rent/payment" method="post" th:object="${payment}" th:action="@{/rent/payment}">-->
+
+    <form action="/rent/payment" method="post" th:object="${payment}" th:action="@{/rent/payment}">
+        <input type="hidden"  th:field="*{id}" />
+
+        <div class="form-group">
+            <label>Card Number:</label>
+            <input type="text" class="form-control" id="street" placeholder="Enter your Card Number" name="cardNumber"
+                   th:field="*{cardNumber}">
+        </div>
+        <div class="form-group">
+            <label>ExpireDate:</label>
+            <input type="date" class="form-control" id="startDate"
+                   placeholder="Project start"
+                   th:field="*{expireDate}"/>
+        </div>
+        <div class="form-group">
+            <label>Cvv:</label>
+            <input type="text" class="form-control" id="state" placeholder="Enter your Cvv Number" name="cvv"
+                   th:field="*{cvv}">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+
+<footer th:replace=" home :: footer"></footer>
+</body>
+</html>

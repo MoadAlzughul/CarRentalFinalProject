@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head th:replace="home :: head">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="../static/css/car_list.css" rel="stylesheet">
+
+</head>
+
+<body>
+<nav th:replace="home :: navbar"></nav>
+
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading -->
+    <h1 class="my-4">Luxury
+
+    </h1>
+
+    <!-- Car One -->
+    <th:block>
+        <table class="table table-striped">
+            <tbody>
+            <tr th:each="vehicle : ${allvehicles}">
+                <div class="row">
+                    <div class="col-md-7">
+                        <a href="#">
+                            <img class="img-fluid rounded mb-3 mb-md-0"  th:src="@{'/images/'+ ${vehicle.getUrl()}}" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-5">
+                        <h3 th:text="${vehicle.getModel()}">Car Name</h3>
+                        <p th:text="${vehicle.getDescription()}">Car description, consectetur adipisicing elit.unde repudiandae voluptatum sit ab debitis
+                            suscipit fugiat
+                            natus velit excepturi amet commodi deleniti
+                            alias possimus!</p>
+                        <ul class="list-group">
+                            <li class="list-group-item" th:text="'Make ' + ${vehicle.getMake()}">Make</li>
+                            <li class="list-group-item" th:text="'Model ' + ${vehicle.getModel()}">Model</li>
+                            <li class="list-group-item" th:text="'Year ' + ${vehicle.getYear()}">year</li>
+                            <li class="list-group-item" th:text="'Rent PerDay ' + ${vehicle.getRentFee()}">year</li>
+                        </ul>
+
+                        <a class="btn btn-primary" th:href="@{'/rent/checkout/' + ${vehicle.getId()}}">Reserve Now!!!</a>
+
+                    </div>
+                </div>
+            </tbody>
+        </table>
+    </th:block>
+</div>
+<!-- /.container -->
+
+
+
+</body>
+
+</html>

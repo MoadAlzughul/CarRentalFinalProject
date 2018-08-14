@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/admin/shared::header">
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="/admin/shared::nav"></nav>
+<table class="table table-hover table-dark">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Url</th>
+        <th scope="col">Description</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cat:${vehicle_cat}">
+
+        <td th:text="${cat.getId()}"></td>
+        <td th:text="${cat.getName()}"></td>
+        <td th:text="${cat.getCatImg_url()}"></td>
+        <td th:text="${cat.getDescription()}"></td>
+
+
+        <td>
+            <a class="btn btn-secondary btn-sm" th:href="@{'/editcategory/' + ${cat.getId()}}">Edit </a>&nbsp;
+            <a class="btn btn-danger btn-sm"  th:href="@{'/deletecategory/' + ${cat.getId()}}">Delete </a>
+            <a class="btn btn-primary btn-sm" th:href="@{'/addvehicle/' + ${cat.getId()}}">Add Vehicles</a>
+
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+<a class="btn btn-primary" th:href="@{/addcategory}">Add New</a>
+<div th:replace="/admin/shared::footer"></div>
+
+</body>
+</html>

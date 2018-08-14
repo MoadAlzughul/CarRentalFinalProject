@@ -34,7 +34,7 @@ public class ReturnController {
         Credential credential=new Credential("admin","1234");
         credential.setRole(Role.ADMIN);
 
-        Address address=new Address("100 N 4th street","fairfield","IOwa",52557);
+        Address address=new Address("1000 N 4th street","fairfield","Iowa",52557);
         user=new Admin("John Doe",address ,credential);
 
     }
@@ -46,12 +46,12 @@ public class ReturnController {
     }
 
 
-    @RequestMapping("/admin")
-    public String login(Model model)
-    {
-        model.addAttribute("credential",new Credential());
-        return "admin/login";
-    }
+//    @RequestMapping("/admin")
+//    public String login(Model model)
+//    {
+//        model.addAttribute("credential",new Credential());
+//        return "admin/login";
+//    }
 
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
