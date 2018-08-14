@@ -1,5 +1,6 @@
 package edu.mum.cs.swe.finalProject.RentCar.controller;
 
+import edu.mum.cs.swe.finalProject.RentCar.model.user.Credential;
 import edu.mum.cs.swe.finalProject.RentCar.model.vehicle.Vehicle;
 import edu.mum.cs.swe.finalProject.RentCar.model.vehicle.VehicleCategory;
 import edu.mum.cs.swe.finalProject.RentCar.service.rentHandler.CategoryHandler;
@@ -25,12 +26,24 @@ public class IndexController {
 //      return "home";
        return "homemelat";
     }
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String indexEmpty() {
+//      return "home";
+       return "homemelat";
+    }
 
     @RequestMapping(value = "/about", method = RequestMethod.GET)
     public String about() {
 //      return "home";
         return "rent/aboutUs";
     }
+    
+    @RequestMapping("/admin")
+  public String login(Model model)
+  {
+      model.addAttribute("credential",new Credential());
+      return "admin/login";
+  }
 
 
     @RequestMapping(value = "/category", method = RequestMethod.GET)

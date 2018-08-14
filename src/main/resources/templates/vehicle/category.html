@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="home :: head">
+</head>
+<body>
+	<nav th:replace="home :: navbar"></nav>
+
+	<!-- Page Content -->
+	<div class="container">
+		<br></br>
+		<br></br>
+		
+		<!-- Page Features -->
+		<div class="row">
+			<table class="table table-striped">
+				<tbody>
+					<tr th:each="vehicleCat : ${vehicleCategory}">
+						<div class="col-lg-3 col-md-6 col-mb-4">
+							<div class="card">
+								<div class="card-header">Brand:.....
+										<br></br>
+								</div>
+								<img class="card-img-top"
+									th:src="@{'/images/'+ ${vehicleCat.getCatImg_url()}}">
+								<div class="card-body">
+									<h4 class="card-title " th:text="${vehicleCat.getName()}"></h4>
+									<p class="card-text" th:text="${vehicleCat.getDescription()}"></p>
+								</div>
+								<div class="card-footer">
+									<a th:href="@{'/catcarlist/' + ${vehicleCat.getId()}}"
+										class="btn btn-primary">Find Out More!!</a>
+								</div>
+							</div>
+						</div>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- /.row -->
+
+	</div>
+
+	<footer th:replace=" home :: footer"></footer>
+
+</body>
+</html>

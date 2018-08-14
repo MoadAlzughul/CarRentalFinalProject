@@ -1,0 +1,25 @@
+.footers {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+}
+
+#outer {
+    margin: 0 auto; /*center*/
+
+}
+
+#inner {
+    /*move the whole container 50px to the left side*/
+    margin-left:50px;
+    margin-top: 25px;
+    /*or move the whole container 50px to the right side*/
+    /*
+    margin-left:50px;
+    margin-right:-50px;
+    */
+}

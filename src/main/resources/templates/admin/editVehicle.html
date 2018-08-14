@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/admin/shared::head">
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="/admin/shared::nav"></nav>
+<div id="outer">
+    <form id="inner"  action="#"   method="POST" th:action="@{/edit}"  th:object="${vehicle}"  >
+        <div class="col-sm-4">
+            <input type="hidden"  th:field="*{id}" />
+        </div>
+        <div class="col-sm-4">
+            <input type="hidden"  th:field="*{available}" />
+        </div>
+        
+        <div class="col-sm-4">
+            <input type="hidden"  th:field="*{category}" />
+        </div>
+
+        <div class="form-group row">
+            <label  class="col-sm-2 col-form-label">Make</label>
+            <label th:if="${#fields.hasErrors('make')}" th:errors="*{make}"
+                   class="validation-message"></label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"  th:field="*{make}"  placeholder="Make Of Vehicle">
+            </div>
+        </div>
+
+        <div class="form-group row">
+
+            <label class="col-sm-2 col-form-label">Model</label>
+            <label th:if="${#fields.hasErrors('model')}" th:errors="*{model}"
+            ></label>
+            <div class="col-sm-4" >
+                <input type="text" class="form-control"    th:field="*{model}" placeholder="Model Name">
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label  class="col-sm-2 col-form-label">Year</label>
+            <label th:if="${#fields.hasErrors('year')}" th:errors="*{year}"
+                   class="validation-message"></label>
+            <div class="col-sm-4">
+                <input  type="text" class="form-control"  th:field="*{year}" placeholder="Year Manufactured">
+            </div>
+        </div>
+        <div class="form-group row">
+        <label  class="col-sm-2 col-form-label">Rent fee Per Day</label>
+        <label th:if="${#fields.hasErrors('rentFee')}" th:errors="*{rentFee}"
+               class="validation-message"></label>
+        <div class="col-sm-4">
+            <input  type="text" class="form-control"  th:field="*{rentFee}" placeholder="Rental price">
+        </div>
+    </div>
+        <div class="form-group row">
+            <label  class="col-sm-2 col-form-label">Url</label>
+            <label th:if="${#fields.hasErrors('url')}" th:errors="*{url}"
+                   class="validation-message"></label>
+            <div class="col-sm-4">
+                <input  type="text" class="form-control"  th:field="*{url}" placeholder="Image Url">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label  class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-4">
+                <input  type="text" class="form-control"  th:field="*{description}" placeholder="Description">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Save</button>
+
+            </div>
+        </div>
+    </form>
+</div>
+<div th:replace="/admin/shared::footer"></div>
+
+</body>
+</html>

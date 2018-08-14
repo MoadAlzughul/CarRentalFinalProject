@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/admin/shared::header">
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href=" https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css">
+
+</head>
+<body>
+<nav th:replace="/admin/shared::nav"></nav>
+<div class="jumbotron text-xs-center">
+    <h1 class="display-3">Customer have not rented a Vehicle!</h1>
+
+    <hr>
+
+    <p class="lead">
+        <a class="btn btn-primary btn-sm" th:href="@{/customerlist}" role="button">Return to Customer List</a>
+    </p>
+</div>
+
+<div th:replace="/admin/shared::footer"></div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<meta charset="UTF-8" />
+<title>CarRentals.com</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../static/css/shared.css"
+	th:href="@{/css/admin.css}" />
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse" th:fragment="navbar">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand"> <img
+					src="//cr-cms-prod.s3.amazonaws.com/production/cms/assets/cr-logo-571ebd53ad3f7f5a66f25d8dfbd4c9707387a277bc5df0ae1a150627d643515d.png"
+					width="220" align="left">
+				</a>
+			</div>
+			<ul class="nav navbar-nav">
+
+				<li class="active"><a th:href="@{/home}">Home</a></li>
+				<li><a th:href="@{/category}">Catagory</a></li>
+				<!--<li><a href="#">Just in case page</a></li>-->
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+
+				<li><a href="about">AboutUs</a></li>
+				<!--<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
+				<!--<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container-fluid text-center">
+		<div class="row content">
+
+			<div class="col-sm-8 text-left">
+				<h1>Welcome</h1>
+				<hr>
+			</div>
+		</div>
+	</div>
+	<br/>
+	<img
+		src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlegYtqvEv0ZJxO83E1f-d7Al-qVezYzSPfX-TOwJX8gi22zoEoA"
+		alt="BabyTesla">
+
+	<footer class="footers" th:fragment="footer">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<span class="text-muted"> .... CS425-SWE .. Niveen, Innocent, Wenxion, Moad .... </span>
+				</div>
+			</div>
+		</div>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/admin/shared::header">
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="/admin/shared::nav"></nav>
+<table class="table table-hover table-dark">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Make</th>
+        <th scope="col">Model</th>
+        <th scope="col">Year Made</th>
+        <th scope="col">Type</th>
+        <th scope="col">Available?</th>
+        <th scope="col">Rent Fee</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="vehcile:${vehicles}">
+
+        <td th:text="${vehcile.getId()}"></td>
+        <td th:text="${vehcile.getMake()}"></td>
+        <td th:text="${vehcile.getModel()}"></td>
+        <td th:text="${vehcile.getYear()}"></td>
+        <td th:text="${vehcile.getCategory().getName()}"></td>
+        <td th:text="${vehcile.isAvailable()} ? 'Yes' : 'No'" ></td>
+        <td th:text="${vehcile.getRentFee()}"></td>
+
+
+        <td>
+            <a class="btn btn-secondary" th:href="@{'/edit/' + ${vehcile.getId()}}">Edit</a>&nbsp;
+            <a class="btn btn-danger" th:href="@{'/delete/' + ${vehcile.getId()}}">Delete</a>
+
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+
+
+<!--<a class="btn btn-primary" th:href="@{/add}">Add New</a>-->
+
+
+</body>
+<div th:replace="/admin/shared::footer"></div>
+</html>

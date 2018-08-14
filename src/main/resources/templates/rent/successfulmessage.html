@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/admin/shared::header">
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href=" https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css">
+
+</head>
+<body>
+<nav th:replace="/admin/shared::nav"></nav>
+<div class="jumbotron text-xs-center">
+    <h1 class="display-3">Success!</h1>
+
+    <hr>
+
+    <p class="lead">
+        <a class="btn btn-primary btn-sm" th:href="@{/home}" role="button">Return to Home Page</a>
+    </p>
+
+    <!-- Page Heading -->
+    <h1 class="my-4">
+        <small>Thankyou<i class="em em---1"></i> Come Again <i class="em em-grinning"></i> </small></h1>
+
+    <small>
+        <img class="img-fluid rounded mb-3 mb-md-0"
+             src="http://sellcarforcashharrisburg.com/assets/images/home-btm2.png"
+             alt="">
+        <small>
+
+            <br>
+</div>
+
+<div th:replace="/admin/shared::footer"></div>
+
+</body>
+</html>
