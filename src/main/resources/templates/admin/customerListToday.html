@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/admin/shared::header">
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="/admin/shared::nav"></nav>
+<table class="table table-hover table-dark">
+    <thead>
+    <tr>
+
+        <th scope="col">Full Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Make</th>
+        <th scope="col">Model</th>
+        <th scope="col">Year</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="rent:${rentRecords}">
+
+
+        <td th:text="${rent.getCustomer().getFullName()}"></td>
+        <td th:text="${rent.getCustomer().getEmail()}"></td>
+        <td th:text="${rent.getVehicle().getMake()}"></td>
+        <td th:text="${rent.getVehicle().getModel()}"></td>
+        <td th:text="${rent.getVehicle().getYear()}"></td>
+
+
+
+        <td>
+            <a class="btn btn-dark"  th:href="@{'/return/' + ${rent.getCustomer().getUserId()}}">Retal Details</a>&nbsp;
+
+
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+
+
+
+<div th:replace="/admin/shared::footer"></div>
+
+</body>
+</html>
