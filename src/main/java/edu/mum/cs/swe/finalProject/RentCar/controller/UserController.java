@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.Duration;
 import java.time.LocalDate;
-
-
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -43,6 +43,32 @@ private IVehicleRepository vehicleRepository;
         return "admin/customerList";
 
     }
+
+    
+    @RequestMapping("/customerlistToday")
+    public String listCustomersToday(Model model){
+
+        List<RentRecord> lsnewt=new ArrayList<RentRecord>();
+        LocalDate cur=LocalDate.now();
+        List<Customer> lst=customerDetailsHandler.findAll();
+        for (Customer var : lst) {
+            for (RentRecord rent : var.getRentrecord()) {
+                if(rent.getRentDate().equals(cur))
+                {
+                    lsnewt.add(rent);
+                  
+                    
+
+                }
+            }
+            
+        }
+        model.addAttribute("rentRecords",lsnewt);
+        return "admin/customerListToday";
+
+
+    }
+
 
 
     @RequestMapping("/return/{id}")
